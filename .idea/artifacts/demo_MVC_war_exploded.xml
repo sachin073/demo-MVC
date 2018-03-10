@@ -1,0 +1,25 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="demo-MVC:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/demo_MVC_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="demo-MVC/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="demo-MVC" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Hibernate 5.2.14-5.2.14" />
+          <element id="library" level="project" name="Spring-4.3.14.RELEASE" />
+          <element id="library" level="project" name="org.thymeleaf:thymeleaf:Release" />
+          <element id="library" level="project" name="org.thymeleaf.extras:thymeleaf-extras-tiles2:Release" />
+          <element id="library" level="project" name="Spring Web Services-2.0.2" />
+          <element id="library" level="project" name="Spring Webflow-2.4.0" />
+          <element id="library" level="project" name="Spring MVC-4.3.14.RELEASE" />
+          <element id="library" level="project" name="mysql:mysql-connector-java:5.1.2" />
+          <element id="library" level="project" name="javax.servlet:javax.servlet-api:3.0.1" />
+          <element id="library" level="project" name="junit:junit:4.12" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
