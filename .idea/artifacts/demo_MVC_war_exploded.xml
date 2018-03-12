@@ -18,7 +18,12 @@
           <element id="library" level="project" name="mysql:mysql-connector-java:5.1.2" />
           <element id="library" level="project" name="javax.servlet:javax.servlet-api:3.0.1" />
           <element id="library" level="project" name="junit:junit:4.12" />
+          <element id="library" level="project" name="com.fasterxml.jackson.core:jackson-databind:2.4.6" />
+          <element id="library" level="project" name="com.fasterxml.jackson.core:jackson-core:2.8.6" />
+          <element id="library" level="project" name="javax.faces:jsf-api:2.1" />
+          <element id="library" level="project" name="javax.servlet:jstl:1.1.2" />
         </element>
+        <element id="library" level="project" name="org.apache.tiles:tiles-extras:3.0.7" />
       </element>
     </root>
   </artifact>

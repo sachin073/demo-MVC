@@ -78,11 +78,6 @@ public class EmployeeJDBCImpl implements EmployeeDao {
 
         try {
             System.out.println(dataSource);
-          /*  if (dataSource==null){
-                DatabaseConfig ds = new DatabaseConfig();
-
-                dataSource = ds.getDataSource();
-            }*/
             conn = dataSource.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ps.setInt(1, employee.getEmpID());
