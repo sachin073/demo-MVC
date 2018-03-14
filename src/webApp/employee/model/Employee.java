@@ -1,9 +1,14 @@
 package webApp.employee.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+import org.springframework.data.mongodb.core.mapping.Field;
+
 /**
  * Created by sachin on 25/2/18.
  */
 
+@Document
 public class Employee {
 
     public int getEmpID() {
@@ -22,7 +27,10 @@ public class Employee {
         this.name = name;
     }
 
+    @Id
     private int empID;
+
+    @Field("EMP_NAME")
     private String name;
 
 

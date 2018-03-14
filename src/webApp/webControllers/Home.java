@@ -1,11 +1,13 @@
 package webApp.webControllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoOperations;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
+import webApp.dbConfig.MongoRepo;
 import webApp.employee.dao.impl.EmployeeJDBCImpl;
 import webApp.employee.model.Employee;
 
@@ -25,6 +27,12 @@ public class Home {
     EmployeeJDBCImpl employeeJDBC;
 
     @Autowired
+    MongoOperations mongoOperations;
+
+    @Autowired
+    MongoRepo mongoRepo;
+
+    @Autowired
     public void setEmployeeJDBC(EmployeeJDBCImpl employeeJDBC) {
         this.employeeJDBC = employeeJDBC;
     }
@@ -34,7 +42,31 @@ public class Home {
 
         Employee employee= new Employee(Integer.parseInt(id),name);
         employeeJDBC.insert(employee);
+
         return "redirect:/home";
+    }
+
+
+    @RequestMapping(value = "/home/mongoEmp" ,method = RequestMethod.POST)
+    public String  insertEmployeeMongo(@RequestParam("ID") String id, @RequestParam("Name") String name){
+
+        Employee employee= new Employee(Integer.parseInt(id),name);
+        mongoRepo.save(employee);
+        return "redirect:/home";
+    }
+
+
+    @RequestMapping(value = "/home/mongoEmpStatic" ,method = RequestMethod.GET)
+    public String  insertEmployeeStaticMongo(){
+        Employee employee= new Employee(23,"Static Emp");
+        mongoRepo.save(employee);
+        return "redirect:/home";
+    }
+
+    @RequestMapping(value = "/home/getMongoEmp" ,method = RequestMethod.GET)
+    public @ResponseBody Employee getMongoEmps(){
+        System.out.println(mongoRepo.findByEmpID()+"nullsss");
+        return mongoRepo.findByEmpID();
     }
 
 
